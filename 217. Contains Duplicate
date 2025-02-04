@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        std::unordered_set<int> hashSet;
+        for (auto it : nums) {
+            hashSet.insert(it);
+        }
+        if (hashSet.size() != nums.size())
+            return true;
+        else
+            return false;
+    }
+};
