@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int,int> uMap;
+
+        for(auto i: nums)
+        {
+            uMap[i]++;
+        }
+        int maxVal = 0;
+        int majorityElement = 0;
+        vector<int> freq;
+        for(auto& entry: uMap)
+        {
+           if(entry.second>maxVal)
+           {
+            maxVal = entry.second;
+            majorityElement = entry.first;
+           }
+        }
+        return majorityElement;
+    }
+};
