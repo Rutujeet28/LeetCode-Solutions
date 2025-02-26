@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int numberOfCuts(int n) {
+        int cuts =0;
+
+        if(n%2==0) cuts =n/2;
+        else if(n==1) cuts = 0;
+        else  cuts = n;
+
+        return cuts;
+    }
+};
