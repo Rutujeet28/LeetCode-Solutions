@@ -1,0 +1,20 @@
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+        if (!(str1 + str2).equals(str2 + str1)) {
+            return "";
+        }
+
+        int minLen = Math.min(str1.length(), str2.length());
+
+        for (int i = minLen; i > 0; i--) {
+            if (str1.length() % i == 0 && str2.length() % i == 0) {
+                String result = str1.substring(0, i);
+                if (str1.equals(result.repeat(str1.length() / i)) && str2.equals(result.repeat(str2.length() / i))) {
+                    return result;
+                }
+            }
+        }
+
+        return "";
+    }
+}
