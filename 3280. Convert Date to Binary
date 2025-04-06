@@ -1,0 +1,17 @@
+class Solution {
+    public String convertDateToBinary(String date) {
+        StringBuilder result = new StringBuilder();
+
+        String[] dateParts = date.split("-");
+
+        result.append(Integer.toBinaryString(Integer.parseInt(dateParts[0])))  
+              .append("-")
+              .append(Integer.toBinaryString(Integer.parseInt(dateParts[1]))) 
+              .append("-")
+              .append(Integer.toBinaryString(Integer.parseInt(dateParts[2])))  
+              .append("");  
+
+        return result.toString();
+
+    }
+}
