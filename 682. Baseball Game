@@ -1,0 +1,27 @@
+class Solution {
+    public int calPoints(String[] operations) {
+        ArrayList<Integer> scores = new ArrayList<>();
+        int total = 0;
+        
+        for(String ops: operations){
+            if(ops.equals("+")){
+                int sum = scores.get(scores.size() - 1) + scores.get(scores.size() - 2);
+                scores.add(sum);
+            }
+            else if(ops.equals("D")){
+                int doubleScore = scores.get(scores.size() - 1) * 2;
+                scores.add(doubleScore);
+            }
+            else if (ops.equals("C")) {
+                scores.remove(scores.size() - 1);
+            }
+            else scores.add(Integer.parseInt(ops));
+        }
+
+        for(int i: scores){
+            total += i;
+        }
+
+        return total;
+    }
+}
