@@ -1,0 +1,22 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int leftSum = 0;
+        //int left = 0;
+        int rightSum = 0;
+
+        for(int num : nums){
+            rightSum += num;
+        }
+
+        for(int left=0; left < nums.length; left++){
+
+            rightSum -= nums[left];
+
+            if(leftSum == rightSum) return left;
+
+            leftSum += nums[left];
+        }
+
+        return -1;
+    }
+}
