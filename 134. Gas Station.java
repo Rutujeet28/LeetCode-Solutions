@@ -14,7 +14,7 @@ class Solution {
         for(int i=0;i<gas.length;i++){
             total += gas[i] - cost[i];
 
-            if(total <= 0){
+            if(total < 0){
                 total = 0;
                 result = i + 1;
             }
